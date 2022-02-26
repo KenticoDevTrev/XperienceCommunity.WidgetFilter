@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>13.0.1</Version>
+    <Authors>Trevor Fayas, Nivi</Authors>
+    <Company>Heartland Business Systems</Company>
+    <Description>Ability to have widgets designated to "Sets" as well as limit widgets based on user, role, or site.</Description>
+    <Copyright></Copyright>
+    <PackageProjectUrl>https://github.com/KenticoDevTrev/XperienceCommunity.WidgetFilter</PackageProjectUrl>
+    <PackageIcon>hbs-favicon-96x96.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/KenticoDevTrev/XperienceCommunity.WidgetFilter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Kentico;Xperience;Widget</PackageTags>
+    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\hbs-favicon-96x96.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Kentico.Xperience.AspNetCore.WebApp" Version="13.0.0" />
+	</ItemGroup>
+</Project>
