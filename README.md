@@ -10,10 +10,12 @@ Kentico Xperience 13 on .Net core 3.1 or above
 1. Add `@addTagHelper *, XperienceCommunity.WidgetFilter` to your `_ViewImports.cshtml` or whichever view you wish to get the tag helper.
 
 # Usage
-Add `[assembly: RegisterWidgetToSets]` to any widget you wish to designate to a set.  If a widget has no `RegisterWidgetToSets` attribute, it's considered a general widget.
-Add `[assembly: RegisterWidgetPermissions]` to any widget widget you wish to limit by User type, Role, or Site.  If a widget has no `RegisterWidgetPermissions` attribute, then it will not get filtered out by permission.
+There are 2 new assembly attributes, `[assembly: RegisterWidgetToSets]` and `[assembly: RegisterWidgetPermissions]`. 
 
 There should be only one `RegisterWidgetToSets` and one `RegisterWidgetPermissions` per widget max.
+
+## Widget Sets
+Add `[assembly: RegisterWidgetToSets]` to any widget you wish to designate to a set.  If a widget has no `RegisterWidgetToSets` attribute, it's considered a general widget.
 
 Add `widget-sets` (along with optional `include-general-widgets='true'`) to your `<editable-area/>` tag.
 
@@ -21,6 +23,11 @@ Example:
 `<editable-area area-identifier="main" widget-sets="@(new string[] { SiteWidgetSets.BANNERS })" include-general-widgets=true />`
 
 By default, if you specify any widget sets, general widgets will be excluded unless you specifically call `include-general-widgets=true`, likewise if you do not specify any widget sets, general widgets are always shown.
+
+## Widget Permission
+Add `[assembly: RegisterWidgetPermissions]` to any widget widget you wish to limit by User type, Role, or Site.  If a widget has no `RegisterWidgetPermissions` attribute, then it will not get filtered out by permission.
+
+Widget identity and the `widgetPermissionMinimumUserType` required, the user type is a minimum so `WidgetPermissionMinimumUserType.Editor` means editors and above can add (all inclusive).  Roles can be an empty array, same for sites, but if you provide then the user either needs to be in the role for roles, or the current site is listed in the sites (site code names) to display.
 
 # Existing Widgets
 If a widget is added prior to being excluded, or if a widget that a user doesn't have permission to add is already on the page, that widget is still editable.  However, you cannot copy / paste it and you cannot add a new widget unless the widget is in the widget set or the user has permission.
