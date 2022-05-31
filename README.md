@@ -34,5 +34,8 @@ If a widget is added prior to being excluded, or if a widget that a user doesn't
 
 So be aware that while you may set a widget to only be usable by Global Administrators, for example, once a Global Administrator adds the widget it can be edited by anyone.
 
+# Mixing area-options-allowed-widgets and widget-sets
+If you hardcode `area-options-allowed-widgets` on the editable area, please note that the Include Generic Widgets will be defaulted to `false` unless specified, otherwise Generic widgets will be included.  Your hard coded widgets will be included as long as the widget permissions allow them to be included.
+
 # Contributions
 If you find a bug, please feel free to submit a pull request!

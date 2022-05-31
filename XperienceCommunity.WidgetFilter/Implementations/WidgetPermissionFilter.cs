@@ -59,7 +59,8 @@ namespace XperienceCommunity.WidgetFilter
             {
                 return widgetIdentities.ToArray();
             }
-
+            var widgetIdentitiesLowerToWidgetIdentities = widgetIdentities.GroupBy(x => x.ToLowerInvariant()).ToDictionary(key => key.Key, value => value.First());
+            var lowerIdentityToProperIdentity = widgetIdentities.ToDictionary(key => key.ToLowerInvariant(), value => value);
             var lowerIdentities = widgetIdentities.Select(x => x.ToLowerInvariant());
             var noPermissionWidgets = lowerIdentities.Except(WidgetIdentityToPermission.Keys);
             var permissionedWidgets = lowerIdentities.Except(noPermissionWidgets);
@@ -75,7 +76,7 @@ namespace XperienceCommunity.WidgetFilter
                 // All excluded so ignore rest
                 if (!permissionedWidgets.Any())
                 {
-                    return allowedWidget.ToArray();
+                    return allowedWidget.Select(x => widgetIdentitiesLowerToWidgetIdentities[x]).ToArray();
                 }
 
                 // Filter by User / User Type
@@ -84,7 +85,7 @@ namespace XperienceCommunity.WidgetFilter
                 // Can't determine username
                 if(string.IsNullOrWhiteSpace(username))
                 {
-                    return allowedWidget.ToArray();
+                    return allowedWidget.Select(x => widgetIdentitiesLowerToWidgetIdentities[x]).ToArray();
                 }
 
                 // Get User
@@ -163,7 +164,8 @@ namespace XperienceCommunity.WidgetFilter
                 }
             }
 
-            return allowedWidget.ToArray();
+            //return allowedWidget.ToArray();
+            return allowedWidget.Select(x => widgetIdentitiesLowerToWidgetIdentities[x]).ToArray();
         }
     }
 }

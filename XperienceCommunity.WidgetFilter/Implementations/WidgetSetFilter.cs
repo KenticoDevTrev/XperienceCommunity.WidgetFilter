@@ -65,7 +65,7 @@ namespace XperienceCommunity.WidgetFilter
                 }
                 return Task.FromResult(validWidgets.Distinct().ToArray());
             }
-            return Task.FromResult(GeneralWidgetNames.ToArray());
+            return Task.FromResult(includeGeneralWidgets ? GeneralWidgetNames.ToArray() : Array.Empty<string>());
         }
     }
 }

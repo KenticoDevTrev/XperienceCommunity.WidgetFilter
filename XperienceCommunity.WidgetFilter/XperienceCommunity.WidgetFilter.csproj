@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>13.0.1</Version>
+    <Version>13.0.2</Version>
     <Authors>Trevor Fayas, Nivi</Authors>
     <Company>Heartland Business Systems</Company>
     <Description>Ability to have widgets designated to "Sets" as well as limit widgets based on user, role, or site.</Description>
@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/KenticoDevTrev/XperienceCommunity.WidgetFilter</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Kentico;Xperience;Widget</PackageTags>
-    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <PackageReleaseNotes>Adjusted to keep Widget Identity capitilization (bug where Copied widgets would not be allowed due to case sensitive check in page-builder.js), also added logic to allow area-options-allowed-widgets to be included and appended to any sets, with including Generic Widgets defaulting to false if any specified.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
