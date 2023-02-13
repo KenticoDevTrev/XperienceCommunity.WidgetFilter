@@ -7,6 +7,7 @@ Kentico Xperience 13 on .Net core 3.1 or above
 # Installation
 1. On your Xperience MVC Site, install the `XperienceCommunity.WidgetFilter` nuget package.
 1. In your startup, call `services.AddWidgetFilter()`
+1. If you have extended the base ApplicationUser class call `services.AddWidgetFilter<TUser>()`
 1. Add `@addTagHelper *, XperienceCommunity.WidgetFilter` to your `_ViewImports.cshtml` or whichever view you wish to get the tag helper.
 
 # Usage
