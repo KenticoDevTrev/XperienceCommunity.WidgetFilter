@@ -14,17 +14,17 @@ using System.Threading.Tasks;
 
 namespace XperienceCommunity.WidgetFilter
 {
-    public class WidgetPermissionFilter : IWidgetPermissionFilter
+    public class WidgetPermissionFilter<TUser> : IWidgetPermissionFilter where TUser : ApplicationUser
     {
         private readonly IUserInfoProvider _userInfoProvider;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<TUser> _userManager;
         private readonly ISiteService _siteService;
         private readonly IProgressiveCache _progressiveCache;
 
         public WidgetPermissionFilter(IUserInfoProvider userInfoProvider, 
             IHttpContextAccessor httpContextAccessor,
-            UserManager<ApplicationUser> userManager,
+            UserManager<TUser> userManager,
             ISiteService siteService,
             IProgressiveCache progressiveCache)
         {
