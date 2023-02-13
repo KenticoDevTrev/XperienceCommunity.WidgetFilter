@@ -9,7 +9,7 @@
     <Description>Ability to have widgets designated to "Sets" as well as limit widgets based on user, role, or site.</Description>
     <Copyright></Copyright>
     <PackageProjectUrl>https://github.com/KenticoDevTrev/XperienceCommunity.WidgetFilter</PackageProjectUrl>
-    <PackageIcon>hbs-favicon-96x96.png</PackageIcon>
+    <!--<PackageIcon>hbs-favicon-96x96.png</PackageIcon>-->
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/KenticoDevTrev/XperienceCommunity.WidgetFilter</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -23,10 +23,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\..\hbs-favicon-96x96.png">
+	  <!--<None Include="..\..\hbs-favicon-96x96.png">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
-	  </None>
+	  </None>-->
 	  <None Include="..\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
